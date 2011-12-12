@@ -10,6 +10,13 @@ task :clean do
   sh "rm -rf ~/.vim"
 end
 
+desc "Backup your vim files"
+task :backup do
+  sh "mv ~/.vimrc ~/.vimrc.bak"
+  sh "mv ~/.gvimrc ~/.gvimrc.bak"
+  sh "mv ~/.vim ~/.vim.bak"
+end
+
 desc "Setup and Install Plugins"
 task :install do
   

@@ -1,9 +1,9 @@
 Installation
 -------------
-Ensure you have a backup of your .vimrc, .gvimrc, and .vim directory before you try this out.
 
   git clone git://github.com/bry4n/venus.git
   cd venus
+  rake backup   # this will make a backup of your .vimrc, .gvimrc, and .vim directory 
   rake install
 
 Assuming that you already have git, ruby (system), and rake. If you are using RVM, please run 'rvm use system' before installing vim plugins [1].
@@ -11,3 +11,4 @@ Assuming that you already have git, ruby (system), and rake. If you are using RV
 [1]: Command-T build requires ruby (system) in order to build ruby C extension successfully. You can disable Command-T by commenting out some lines in .vimrc and Rakefile. 
 
 
+credits to janus for .gvimrc
