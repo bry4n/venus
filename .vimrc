@@ -50,6 +50,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'wavded/vim-stylus'
 Bundle 'juvenn/mustache.vim'
 Bundle 'bry4n/vwilight.vim'
+Bundle "sickill/vim-pasta"
+Bundle "Lokaltog/vim-powerline"
 
 Bundle "Color-Sampler-Pack"
 Bundle "taglist.vim"
@@ -126,6 +128,9 @@ map <C-\> :tnext<<CR>
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
+" vim-pasta
+let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
+let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
 
 
 """"""""""""""""""""""""""
