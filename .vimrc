@@ -52,6 +52,7 @@ Bundle 'juvenn/mustache.vim'
 Bundle 'bry4n/vwilight.vim'
 Bundle "sickill/vim-pasta"
 Bundle "Lokaltog/vim-powerline"
+Bundle "kien/ctrlp.vim"
 
 Bundle "Color-Sampler-Pack"
 Bundle "taglist.vim"
