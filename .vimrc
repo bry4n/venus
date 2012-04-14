@@ -53,6 +53,7 @@ Bundle 'bry4n/vwilight.vim'
 Bundle "sickill/vim-pasta"
 Bundle "Lokaltog/vim-powerline"
 Bundle "kien/ctrlp.vim"
+Bundle "nanotech/jellybeans.vim"
 
 Bundle "Color-Sampler-Pack"
 Bundle "taglist.vim"
@@ -132,7 +133,6 @@ map <Leader>n :NERDTreeToggle<CR>
 " vim-pasta
 let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
 let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
-
 
 """"""""""""""""""""""""""
 "
