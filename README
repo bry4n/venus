@@ -6,9 +6,6 @@ Installation
   rake backup   # this will make a backup of your .vimrc, .gvimrc, and .vim directory 
   rake install
 
-Assuming that you already have git, ruby (system), and rake. If you are using RVM, please run 'rvm use system' before installing vim plugins [1].
-
-[1]: Command-T build requires ruby (system) in order to build ruby C extension successfully. You can disable Command-T by commenting out some lines in .vimrc and Rakefile. 
-
+Assuming that you already have git, ruby, and rake.
 
 credits to janus for .gvimrc

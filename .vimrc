@@ -44,7 +44,7 @@ Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-rvm"
 Bundle "bbommarito/vim-slim"
-Bundle 'git://git.wincent.com/command-t.git'
+"Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'mattn/zencoding-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'wavded/vim-stylus'

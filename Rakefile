@@ -33,6 +33,6 @@ task :install do
   sh "vim -c BundleInstall"
   
   # Building Command-T's C extension -- comment this out if you don't want command-t compiled
-  sh "cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make clean && make"
+  #sh "cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make clean && make"
 end
 
