@@ -56,6 +56,7 @@ Bundle "kien/ctrlp.vim"
 Bundle "cloudhead/shady.vim"
 Bundle "nanotech/jellybeans.vim"
 Bundle "sunaku/vim-ruby-minitest"
+Bundle "elixir-lang/vim-elixir.git"
 
 Bundle "Color-Sampler-Pack"
 Bundle "taglist.vim"
