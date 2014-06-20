@@ -22,12 +22,12 @@ Bundle "wycats/nerdtree"
 Bundle "ddollar/nerdcommenter"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-vividchalk"
-Bundle "altercation/vim-colors-solarized"
+"Bundle "altercation/vim-colors-solarized"
 Bundle "ervandew/supertab"
 Bundle "tpope/vim-cucumber"
 Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-rails"
-Bundle "taq/vim-rspec"
+Bundle "skwp/vim-rspec"
 Bundle "msanders/snipmate.vim"
 Bundle "tpope/vim-markdown"
 Bundle "tsaleh/vim-align"
@@ -37,17 +37,17 @@ Bundle "wgibbs/vim-irblack"
 Bundle "kchmck/vim-coffee-script"
 Bundle "scrooloose/syntastic"
 Bundle "ajf/puppet-vim"
-Bundle "bdd/vim-scala"
+"Bundle "bdd/vim-scala"
 Bundle "mattn/gist-vim"
 Bundle "sjl/gundo.vim"
 Bundle "vim-ruby/vim-ruby"
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-rvm"
-Bundle "bbommarito/vim-slim"
+"Bundle "bbommarito/vim-slim"
 "Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'wavded/vim-stylus'
+"Bundle 'wavded/vim-stylus'
 Bundle 'juvenn/mustache.vim'
 Bundle 'bry4n/vwilight.vim'
 Bundle "sickill/vim-pasta"
@@ -109,8 +109,8 @@ set background=dark
 """"""""""""""""""""""""""
 
 " Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+"let g:syntastic_enable_signs=1
+"let g:syntastic_quiet_warnings=1
 
 " Bundler
 map <Leader>bi :Bundle install<CR><CR>
