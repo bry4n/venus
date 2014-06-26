@@ -10,4 +10,4 @@ Installation
 
 Assuming that you already have git, ruby, and rake.
 
-credits to janus for .gvimrc
+credits to [janus](https://github.com/carlhuda/janus) for .gvimrc
