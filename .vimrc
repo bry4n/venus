@@ -40,6 +40,7 @@ Bundle 'thoughtbot/vim-rspec'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-rvm'
 Bundle 'sickill/vim-pasta'
+Bundle 'ngmy/vim-rubocop'
 
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tomasr/molokai'
