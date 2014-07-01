@@ -12,59 +12,47 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle "mileszs/ack.vim"
 Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-git"
-Bundle "tpope/vim-haml"
-Bundle "airblade/vim-gitgutter"
-Bundle "michaeljsmith/vim-indent-object"
-Bundle "pangloss/vim-javascript"
-Bundle "wycats/nerdtree"
-Bundle "ddollar/nerdcommenter"
+Bundle "scrooloose/nerdtree"
 Bundle "tpope/vim-surround"
-Bundle "tpope/vim-vividchalk"
-Bundle "altercation/vim-colors-solarized"
-Bundle "ervandew/supertab"
-Bundle "tpope/vim-cucumber"
-Bundle "timcharper/textile.vim"
-Bundle "tpope/vim-rails"
-Bundle "taq/vim-rspec"
-Bundle "msanders/snipmate.vim"
-Bundle "tpope/vim-markdown"
-Bundle "tsaleh/vim-align"
-Bundle "tpope/vim-unimpaired"
-Bundle "tpope/vim-endwise"
-Bundle "wgibbs/vim-irblack"
-Bundle "kchmck/vim-coffee-script"
-"Bundle "scrooloose/syntastic"
-Bundle "ajf/puppet-vim"
-Bundle "bdd/vim-scala"
-Bundle "mattn/gist-vim"
-Bundle "sjl/gundo.vim"
-Bundle "vim-ruby/vim-ruby"
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-rvm"
-Bundle "bbommarito/vim-slim"
-"Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'mattn/zencoding-vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'wavded/vim-stylus'
-Bundle 'juvenn/mustache.vim'
-Bundle 'bry4n/vwilight.vim'
-Bundle "sickill/vim-pasta"
-Bundle "Lokaltog/vim-powerline"
 Bundle "kien/ctrlp.vim"
-Bundle "cloudhead/shady.vim"
-Bundle "nanotech/jellybeans.vim"
-Bundle "sunaku/vim-ruby-minitest"
-Bundle "elixir-lang/vim-elixir.git"
+Bundle "kchmck/vim-coffee-script"
+Bundle "scrooloose/nerdcommenter"
+Bundle "tpope/vim-rails"
+Bundle "mileszs/ack.vim"
+Bundle "majutsushi/tagbar"
+Bundle "tpope/vim-markdown"
+Bundle "pangloss/vim-javascript"
+Bundle "vim-ruby/vim-ruby"
+Bundle "bling/vim-airline"
+Bundle "tpope/vim-endwise"
+Bundle 'airblade/vim-gitgutter'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle "mattn/emmet-vim"
+Bundle 'tpope/vim-bundler'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-abolish'
+Bundle 'rking/ag.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-rvm'
+Bundle 'sickill/vim-pasta'
+Bundle 'ngmy/vim-rubocop'
 
-Bundle "Color-Sampler-Pack"
-Bundle "taglist.vim"
-Bundle "ZoomWin"
-Bundle "searchfold.vim"
+Bundle 'flazz/vim-colorschemes'
+Bundle 'tomasr/molokai'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'bry4n/vwilight.vim'
+Bundle "cloudhead/shady.vim"
+Bundle "wgibbs/vim-irblack"
+
+Bundle "sunaku/vim-ruby-minitest"
+
 Bundle "Conque-Shell"
-Bundle 'molokai'
 
 filetype plugin indent on
 
@@ -96,8 +84,9 @@ set modelines=10
 set showcmd
 set mouse=a
 
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Capfile,config.ru} set ft=ruby
 au BufNewFile,BufRead *.json set ft=javascript
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
 " color scheme
 colorscheme desert
@@ -105,13 +94,26 @@ set background=dark
 
 """"""""""""""""""""""""""
 "
-" Vim Plugins
+" Plugin Settings
 "
 """"""""""""""""""""""""""
+" RSpec
+let g:rspec_command = "Dispatch rspec {spec}"
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
-" Syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
+" GitGutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+" Tagbar
+nmap <Leader>tb :TagbarToggle<CR>
+
+" Ctrlp
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,*.jpg,*.gif,*.png
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Bundler
 map <Leader>bi :Bundle install<CR><CR>
@@ -122,13 +124,6 @@ map <Leader>gb :Gblame<CR><CR>
 map <Leader>gs :Gstatus<CR><CR>
 map <Leader>gc :Gcommit <CR><CR>
 map <Leader>gh :Gbrowse<CR><CR>
-
-" Taglist
-map <Leader>tl :TlistToggle<CR><CR>
-
-" CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-map <C-\> :tnext<<CR>
 
 " NERDTree
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
