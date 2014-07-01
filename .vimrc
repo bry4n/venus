@@ -8,9 +8,9 @@ filetype off
 """"""""""""""""
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 Bundle "tpope/vim-fugitive"
 Bundle "scrooloose/nerdtree"
@@ -52,7 +52,9 @@ Bundle "wgibbs/vim-irblack"
 
 Bundle "sunaku/vim-ruby-minitest"
 
-Bundle "Conque-Shell"
+"Bundle "Conque-Shell"
+
+call vundle#end()
 
 filetype plugin indent on
 
@@ -83,6 +85,8 @@ set modeline
 set modelines=10
 set showcmd
 set mouse=a
+set nobackup
+set noswapfile
 
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Capfile,config.ru} set ft=ruby
 au BufNewFile,BufRead *.json set ft=javascript
@@ -94,7 +98,7 @@ set background=dark
 
 """"""""""""""""""""""""""
 "
-" Plugin Settings
+" Bundle Settings
 "
 """"""""""""""""""""""""""
 " RSpec

@@ -29,10 +29,8 @@ task :install do
     end
   end
   
-  sh "git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle"
-  sh "vim -c BundleInstall"
+  sh "git clone http://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle"
+  sh "vim +PluginInstall +qall"
   
-  # Building Command-T's C extension -- comment this out if you don't want command-t compiled
-  #sh "cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make clean && make"
 end
 
