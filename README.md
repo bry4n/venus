@@ -1,13 +1,12 @@
 Installation
 -------------
 
-```
+1. Backup your `.vimrc` file and `.vim` directory
+
+2. Run commands below:
+
+```sh
   git clone git://github.com/bry4n/venus.git
   cd venus
-  rake backup   # this will make a backup of your .vimrc, .gvimrc, and .vim directory 
-  rake install
+  ./setup.sh
 ```
-
-Assuming that you already have git, ruby, and rake.
-
-credits to [janus](https://github.com/carlhuda/janus) for .gvimrc

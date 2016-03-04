@@ -1,63 +1,81 @@
 set nocompatible
 filetype off
 
-""""""""""""""""
-"
-" Vundle
-"
-""""""""""""""""
+" Install vim-plug if we don't arlready have it
+if empty(glob("~/.vim/autoload/plug.vim"))
+  " Ensure all needed directories exist  (Thanks @kapadiamush)
+  execute 'mkdir -p ~/.vim/plugged'
+  execute 'mkdir -p ~/.vim/autoload'
+  " Download the actual plugin manager
+  execute '!curl -fLo ~/.vim/autoload/plug.vim
+  https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Bundle 'gmarik/Vundle.vim'
+" Colorschemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
+Plug 'tomasr/molokai'
+"Plug 'flazz/vim-colorschemes'
+Plug 'nanotech/jellybeans.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'bry4n/vwilight.vim'
+Plug 'cloudhead/shady.vim'
+Plug 'wgibbs/vim-irblack'
 
-Bundle "tpope/vim-fugitive"
-Bundle "scrooloose/nerdtree"
-Bundle "tpope/vim-surround"
-Bundle "kien/ctrlp.vim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "scrooloose/nerdcommenter"
-Bundle "tpope/vim-rails"
-Bundle "mileszs/ack.vim"
-Bundle "majutsushi/tagbar"
-Bundle "tpope/vim-markdown"
-Bundle "pangloss/vim-javascript"
-Bundle "vim-ruby/vim-ruby"
-Bundle "bling/vim-airline"
-Bundle "tpope/vim-endwise"
-Bundle 'airblade/vim-gitgutter'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle "mattn/emmet-vim"
-Bundle 'tpope/vim-bundler'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-abolish'
-Bundle 'rking/ag.vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/vim-rvm'
-Bundle 'sickill/vim-pasta'
-Bundle 'ngmy/vim-rubocop'
+" Syntax
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
+Plug 'tpope/vim-git', { 'for': 'git' }
+Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'fatih/vim-go'
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'vim-scripts/pythonhelper'
 
-Bundle 'flazz/vim-colorschemes'
-Bundle 'tomasr/molokai'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'bry4n/vwilight.vim'
-Bundle "cloudhead/shady.vim"
-Bundle "wgibbs/vim-irblack"
+" User Interface
+Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'majutsushi/tagbar'
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
 
-Bundle "sunaku/vim-ruby-minitest"
+ Integrations
+Plug 'scrooloose/syntastic', { 'for': ['php', 'python', 'javascript', 'css'] }
+Plug 'vim-scripts/matchit.zip'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
+Plug 'vim-scripts/grep.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-abolish'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+Plug 'Raimondi/delimitMate'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'sickill/vim-pasta'
 
-"Bundle "Conque-Shell"
 
-call vundle#end()
 
 filetype plugin indent on
-
+call plug#end()
 
 """"""""""""""""""""""
 "
@@ -68,7 +86,7 @@ filetype plugin indent on
 set number
 set ruler
 syntax on
-set encoding=utf-8
+set encoding=utf8
 set nowrap
 set tabstop=2
 set shiftwidth=2
@@ -91,6 +109,7 @@ set noswapfile
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Capfile,config.ru} set ft=ruby
 au BufNewFile,BufRead *.json set ft=javascript
 au BufNewFile,BufReadPost *.md set filetype=markdown
+au BufNewFile,BufRead *.py set filetype=python
 
 " color scheme
 colorscheme desert
@@ -98,15 +117,9 @@ set background=dark
 
 """"""""""""""""""""""""""
 "
-" Bundle Settings
+" Plugin Settings
 "
 """"""""""""""""""""""""""
-" RSpec
-let g:rspec_command = "Dispatch rspec {spec}"
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
 
 " GitGutter
 let g:gitgutter_realtime = 0
@@ -119,10 +132,6 @@ nmap <Leader>tb :TagbarToggle<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,*.jpg,*.gif,*.png
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
-" Bundler
-map <Leader>bi :Bundle install<CR><CR>
-map <Leader>bu :Bundle update<CR><CR>
-
 " Fugitive
 map <Leader>gb :Gblame<CR><CR>
 map <Leader>gs :Gstatus<CR><CR>
@@ -134,8 +143,8 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 map <Leader>n :NERDTreeToggle<CR>
 
 " vim-pasta
-let g:pasta_disabled_filetypes = ['python', 'coffee', 'yaml']
-let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh']
+let g:pasta_disabled_filetypes = ['coffee', 'yaml']
+let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh', 'python']
 
 """"""""""""""""""""""""""
 "
