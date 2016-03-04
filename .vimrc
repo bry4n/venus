@@ -38,7 +38,7 @@ Plug 'majutsushi/tagbar'
 Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 
- Integrations
+" Integrations
 Plug 'scrooloose/syntastic', { 'for': ['php', 'python', 'javascript', 'css'] }
 Plug 'vim-scripts/matchit.zip'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -61,8 +61,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sickill/vim-pasta'
-
-
 
 filetype plugin indent on
 call plug#end()
