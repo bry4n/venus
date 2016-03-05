@@ -7,12 +7,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 Plug 'tomasr/molokai'
-"Plug 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 Plug 'nanotech/jellybeans.vim'
 Plug 'w0ng/vim-hybrid'
 Plug 'bry4n/vwilight.vim'
 Plug 'cloudhead/shady.vim'
 Plug 'wgibbs/vim-irblack'
+Plug 'whatyouhide/vim-gotham'
+Plug 'vim-airline/vim-airline-themes'
 
 " Syntax
 Plug 'othree/html5.vim', { 'for': 'html' }
@@ -29,7 +31,7 @@ Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'fatih/vim-go'
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'vim-scripts/pythonhelper'
+Plug 'saltstack/salt-vim'
 
 " User Interface
 Plug 'tpope/vim-vinegar'
@@ -39,7 +41,7 @@ Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
 
 " Integrations
-Plug 'scrooloose/syntastic', { 'for': ['php', 'python', 'javascript', 'css'] }
+Plug 'scrooloose/syntastic', { 'for': ['python', 'javascript', 'css', 'ruby', 'go'] }
 Plug 'vim-scripts/matchit.zip'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rking/ag.vim'
@@ -76,9 +78,9 @@ set ruler
 syntax on
 set encoding=utf8
 set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set hlsearch
 set incsearch
