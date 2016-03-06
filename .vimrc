@@ -14,31 +14,32 @@ Plug 'bry4n/vwilight.vim'
 Plug 'cloudhead/shady.vim'
 Plug 'wgibbs/vim-irblack'
 Plug 'whatyouhide/vim-gotham'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
+"Plug 'vim-airline/vim-airline-themes'
 
 " Syntax
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
-Plug 'tpope/vim-git', { 'for': 'git' }
-Plug 'hdima/python-syntax', { 'for': 'python' }
-Plug 'tpope/vim-markdown', { 'for': 'markdown' }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'mattn/emmet-vim', { 'for': 'html' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'fatih/vim-go'
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'saltstack/salt-vim'
+Plug 'fatih/vim-go'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'hdima/python-syntax', { 'for': 'python' }
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'tpope/vim-git', { 'for': 'git' }
 
 " User Interface
 Plug 'tpope/vim-vinegar'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
-Plug 'bling/vim-airline'
 Plug 'airblade/vim-gitgutter'
+"Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 " Integrations
 Plug 'scrooloose/syntastic', { 'for': ['python', 'javascript', 'css', 'ruby', 'go'] }
@@ -135,6 +136,9 @@ map <Leader>n :NERDTreeToggle<CR>
 " vim-pasta
 let g:pasta_disabled_filetypes = ['coffee', 'yaml']
 let g:pasta_enabled_filetypes = ['ruby', 'javascript', 'css', 'sh', 'python']
+
+" Lightline
+let g:lightline = { 'colorscheme': 'wombat' }
 
 """"""""""""""""""""""""""
 "
